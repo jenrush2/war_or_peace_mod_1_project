@@ -40,6 +40,17 @@ class Deck
         return high_ranking_array
     end
 
+    def percent_high_ranking
+        high_ranking_array = []
+        cards.each do |card|
+            if card.rank >= 11
+                high_ranking_array.append(card)
+            end
+        end
+        percent = (high_ranking_array.length.to_f/cards.length) * 100
+        return percent
+    end
+
 
 end
 
@@ -61,4 +72,6 @@ deck = Deck.new(cards)
 
 #p deck.rank_of_card_at(2)
 
-p deck.high_ranking_cards
+#p deck.high_ranking_cards
+
+p deck.percent_high_ranking
