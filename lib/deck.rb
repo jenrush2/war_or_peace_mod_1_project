@@ -56,6 +56,11 @@ class Deck
         return cards
     end
 
+    def add_card(new)
+        cards.push(new)
+        return cards
+    end
+
 
 end
 
@@ -79,6 +84,17 @@ deck = Deck.new(cards)
 
 #p deck.high_ranking_cards
 
-#p deck.percent_high_ranking
+p deck.percent_high_ranking
 
 p deck.remove_card
+
+#p deck.high_ranking_cards
+
+p deck.percent_high_ranking
+
+card4 = Card.new(:club, '5', 5)
+
+p deck.add_card(card4)
+
+
+
