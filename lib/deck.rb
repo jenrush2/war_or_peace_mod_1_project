@@ -51,6 +51,11 @@ class Deck
         return percent
     end
 
+    def remove_card
+        cards.delete_at(0)
+        return cards
+    end
+
 
 end
 
@@ -74,4 +79,6 @@ deck = Deck.new(cards)
 
 #p deck.high_ranking_cards
 
-p deck.percent_high_ranking
+#p deck.percent_high_ranking
+
+p deck.remove_card
