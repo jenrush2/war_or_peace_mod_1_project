@@ -30,6 +30,17 @@ class Deck
         one_card.rank
     end
 
+    def high_ranking_cards
+        high_ranking_array = []
+        cards.each do |card|
+            if card.rank >= 11
+                high_ranking_array.append(card)
+            end
+        end
+        return high_ranking_array
+    end
+
+
 end
 
 card1 = Card.new(:diamond, 'Queen', 12)
@@ -46,6 +57,8 @@ deck = Deck.new(cards)
 
 #p deck.cards
 
-p deck.rank_of_card_at(0)
+#p deck.rank_of_card_at(0)
 
-p deck.rank_of_card_at(2)
+#p deck.rank_of_card_at(2)
+
+p deck.high_ranking_cards
