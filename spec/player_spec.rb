@@ -97,7 +97,7 @@ RSpec.describe Player do
 
         deck = Deck.new(cards)
 
-        player = Player.new('Clarisa', deck)
+        player = Player.new('Dan', deck)
 
         expect(player.deck.remove_card).to eq([card2, card3])
         expect(player.deck.remove_card).to eq([card3])
