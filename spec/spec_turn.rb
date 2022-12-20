@@ -38,4 +38,8 @@ RSpec.describe Turn do
         expect(@turn.spoils_of_war).to eq([])
     end
 
+    it 'can test the type of turn' do
+        expect(@turn.type).to eq(:basic)
+    end
+
 end

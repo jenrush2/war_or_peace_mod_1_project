@@ -12,4 +12,10 @@ class Turn
         @second_player = second_player
         @spoils_of_war = []
     end
+
+    def type
+        if first_player.deck.rank_of_card_at(0) != second_player.deck.rank_of_card_at(0)
+            :basic
+        end
+    end
 end 
