@@ -29,4 +29,9 @@ RSpec.describe Turn do
         expect(@turn).to be_an_instance_of(Turn)
     end
 
+    it 'has players' do
+        expect(@turn.first_player).to eq(@player1)
+        expect(@turn.second_player).to eq(@player2)
+    end
+
 end
