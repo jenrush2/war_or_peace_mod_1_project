@@ -34,4 +34,8 @@ RSpec.describe Turn do
         expect(@turn.second_player).to eq(@player2)
     end
 
+    it 'starts with an empty spoils of war pile' do
+        expect(@turn.spoils_of_war).to eq([])
+    end
+
 end
