@@ -40,4 +40,25 @@ class Turn
             end
         end
     end
+
+    def pile
+        if first_player.deck.rank_of_card_at(0) == second_player.deck.rank_of_card_at(0) and first_player.deck.rank_of_card_at(2) == second_player.deck.rank_of_card_at(2)
+            3.times{first_player.deck.remove_card}
+            3.times{second_player.deck.remove_card}
+
+        elsif first_player.deck.rank_of_card_at(0) == second_player.deck.rank_of_card_at(0)
+            spoils_of_war << first_player.deck.cards[0]
+            spoils_of_war << first_player.deck.cards[1]
+            spoils_of_war << first_player.deck.cards[2]
+            
+            spoils_of_war << second_player.deck.cards[0]
+            spoils_of_war << second_player.deck.cards[1]
+            spoils_of_war << second_player.deck.cards[2]
+
+        else 
+            spoils_of_war << first_player.deck.cards[0]
+            spoils_of_war << second_player.deck.cards[0]
+        end
+    end
+
 end 
