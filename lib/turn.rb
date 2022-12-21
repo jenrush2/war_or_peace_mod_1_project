@@ -22,4 +22,22 @@ class Turn
             :basic
         end
     end
+
+    def winner
+        if first_player.deck.rank_of_card_at(0) == second_player.deck.rank_of_card_at(0) and first_player.deck.rank_of_card_at(2) == second_player.deck.rank_of_card_at(2)
+            "No Winner"
+        elsif first_player.deck.rank_of_card_at(0) == second_player.deck.rank_of_card_at(0)
+            if first_player.deck.rank_of_card_at(2) > second_player.deck.rank_of_card_at(2)
+                first_player
+            elsif first_player.deck.rank_of_card_at(2) < second_player.deck.rank_of_card_at(2)
+                second_player
+            end
+        else 
+            if first_player.deck.rank_of_card_at(0) > second_player.deck.rank_of_card_at(0)
+                first_player
+            else
+                second_player
+            end
+        end
+    end
 end 
