@@ -245,6 +245,7 @@ RSpec.describe Turn do
 
         expect(turn.first_player.deck.cards).to eq([card8])
         expect(turn.second_player.deck.cards).to eq([card7, card1, card2, card5, card4, card3, card6])
+        expect(turn.spoils_of_war).to eq([])
     end
 
 end
