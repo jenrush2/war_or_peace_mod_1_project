@@ -55,10 +55,18 @@ class Turn
             spoils_of_war << second_player.deck.cards[1]
             spoils_of_war << second_player.deck.cards[2]
 
+            3.times{first_player.deck.remove_card}
+            3.times{second_player.deck.remove_card}
+
         else 
             spoils_of_war << first_player.deck.cards[0]
             spoils_of_war << second_player.deck.cards[0]
         end
+
+        def award_spoils(winning_player)
+            winning_player.deck.cards.concat spoils_of_war
+        end
+
     end
 
 end 
