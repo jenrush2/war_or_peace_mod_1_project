@@ -1,4 +1,6 @@
-require './card'
+require './lib/card'
+
+#Used pry testing instead of rspec
 
 class Deck
     attr_reader :cards
