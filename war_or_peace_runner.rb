@@ -3,6 +3,7 @@ require './lib/deck'
 require './lib/player'
 require './lib/turn'
 require './lib/card_generator'
+require './lib/game'
 
 new_card_deck = CardGenerator.new("deck_of_cards.txt").create_cards
 
