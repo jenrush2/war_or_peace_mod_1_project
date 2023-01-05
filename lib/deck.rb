@@ -45,5 +45,4 @@ class Deck
         return cards
     end
 
-
 end
