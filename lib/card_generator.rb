@@ -14,23 +14,28 @@ class CardGenerator
 
     def create_cards
         card_deck = []
+        values_for_one_card = []
         File.foreach(filename) {|line|
             full_list_split = line.split(",").map(&:strip)
-            values_for_one_card = []
-            values_for_one_card << full_list_split.slice(0..2)
-            values_for_one_card = values_for_one_card.flatten
-            this_suit = values_for_one_card[0].to_sym
-            this_value = values_for_one_card[1]
-            this_rank = values_for_one_card[2].to_i
+
+                this_suit = full_list_split[0].to_sym
+                this_value = full_list_split[1]
+                this_rank = full_list_split[2].to_i
+                new_card = Card.new(this_suit, this_value, this_rank)
             
-            
-            new_card = Card.new(this_suit, this_value, this_rank)
-            card_deck = Deck.new(new_card)
+                if card_deck == []
+                    card_deck = Deck.new([new_card])
+                    card_deck
+                else 
+                    card_deck.add_card(new_card)
+                    card_deck
+                end
         }
-        card_deck.cards
+        return card_deck.cards
     end
                    
 end
 
 
 
+ 
