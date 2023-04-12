@@ -45,7 +45,8 @@ class Deck
         return cards
     end
 
-    def shuffle
+    def shuffleme
+        cards.shuffle
         return cards.shuffle
     end
 
