@@ -31,7 +31,7 @@ class CardGenerator
                     card_deck
                 end
         }
-        return card_deck.cards
+        return card_deck
     end
                    
 end

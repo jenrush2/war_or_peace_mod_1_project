@@ -45,4 +45,8 @@ class Deck
         return cards
     end
 
+    def shuffle
+        return cards.shuffle
+    end
+
 end
