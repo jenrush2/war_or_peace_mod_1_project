@@ -46,8 +46,9 @@ class Deck
     end
 
     def shuffleme
-        cards.shuffle
-        return cards.shuffle
+        @cards = cards.shuffle
+        return cards
     end
+
 
 end

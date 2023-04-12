@@ -14,7 +14,13 @@ class Turn
     end
 
     def type
-        if first_player.deck.rank_of_card_at(0) == second_player.deck.rank_of_card_at(0) and first_player.deck.rank_of_card_at(2) == second_player.deck.rank_of_card_at(2)
+        if first_player.deck.rank_of_card_at(0) == second_player.deck.rank_of_card_at(0) and first_player.deck.cards.length < 3
+            puts "#{second_player.name} wins! Game over!"
+            :game_over
+        elsif first_player.deck.rank_of_card_at(0) == second_player.deck.rank_of_card_at(0) and second_player.deck.cards.length < 3
+            puts "#{first_player.name} wins! Game over!"
+            :game_over
+        elsif first_player.deck.rank_of_card_at(0) == second_player.deck.rank_of_card_at(0) and first_player.deck.rank_of_card_at(2) == second_player.deck.rank_of_card_at(2)
             :mutually_assured_destruction
         elsif first_player.deck.rank_of_card_at(0) == second_player.deck.rank_of_card_at(0)
             :war
@@ -24,6 +30,14 @@ class Turn
     end
 
     def winner
+        if first_player.deck.rank_of_card_at(0) == second_player.deck.rank_of_card_at(0) and first_player.deck.cards.length < 3
+            puts "#{second_player.name} wins! Game over!"
+            
+        elsif first_player.deck.rank_of_card_at(0) == second_player.deck.rank_of_card_at(0) and second_player.deck.cards.length < 3
+            puts "#{first_player.name} wins! Game over!"
+            
+        end
+
         if first_player.deck.rank_of_card_at(0) == second_player.deck.rank_of_card_at(0) and first_player.deck.rank_of_card_at(2) == second_player.deck.rank_of_card_at(2)
             "No Winner"
         elsif first_player.deck.rank_of_card_at(0) == second_player.deck.rank_of_card_at(0)
@@ -61,6 +75,9 @@ class Turn
         else 
             spoils_of_war << first_player.deck.cards[0]
             spoils_of_war << second_player.deck.cards[0]
+            
+            first_player.deck.remove_card
+            second_player.deck.remove_card
         end
 
         def award_spoils(winning_player)
