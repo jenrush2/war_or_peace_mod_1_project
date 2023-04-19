@@ -23,7 +23,6 @@ class Game
                 round += 1
                 turn = Turn.new(first_player, second_player)
 
-
                 if turn.type == :game_over
                     break
                 end
